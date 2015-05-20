@@ -1,5 +1,5 @@
 # Javascipt 學習筆記
-
+> Written with [StackEdit](https://stackedit.io/).
 這裡記錄了我學習`Javascript`的心得
 
 ## 文詞對照
