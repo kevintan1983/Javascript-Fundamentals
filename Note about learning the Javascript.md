@@ -1,3 +1,5 @@
+[TOC]
+
 # Javascipt 學習筆記
 
 > Written with [StackEdit](https://stackedit.io/)
@@ -20,7 +22,7 @@ Javascript 是一種動態物件導向的語言，它有著類別、運算子、
  - 函式裡可放置執行程式，並且指派給其他物件
 
 ## Class 類別
-在 Javascript 裡面沒有用來宣告類別的語法，而是透過函數來定義類別。在下面的範例裡面，我們透過函數建立一個名為 Person 的類別，而這個類別的建構式是一個空的函數：
+在 Javascript 裡面沒有用來宣告類別的語法，但我們可以透過函數來定義類別。在下面的範例裡面，我們使用函數建立一個名為 **Person** 的類別，而這個類別的建構式是一個空的函數：
 
 
 	var Person = function () {};
