@@ -1,6 +1,7 @@
 # Javascipt 學習筆記
+
 > Written with [StackEdit](https://stackedit.io/).
-這裡記錄了我學習`Javascript`的心得
+> 這裡記錄了我學習`Javascript`的心得
 
 ## 文詞對照
 1. Object = 物件，類別的實體化
