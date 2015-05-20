@@ -8,6 +8,8 @@
 <li><a href="#物件的產生方式">物件的產生方式</a><ul>
 <li><a href="#實字模式範例">實字模式範例</a></li>
 <li><a href="#關鍵字new範例">關鍵字new範例</a></li>
+<li><a href="#建構式範例">建構式範例</a></li>
+<li><a href="#函數範例">函數範例</a></li>
 </ul>
 </li>
 <li><a href="#property-屬性">Property 屬性</a></li>
@@ -26,8 +28,6 @@
   <p>Written with <a href="https://stackedit.io/">StackEdit</a> <br>
   這裡記錄了我學習<code>Javascript</code>的心得</p>
 </blockquote>
-
-
 
 <h2 id="文詞對照">文詞對照</h2>
 
@@ -68,6 +68,8 @@
   <p><strong>注意：</strong> <code>Person</code>這個變數背後指向一個空的函數，且在被實體化之前，變數的型別會是 Function。</p>
 </blockquote>
 
+
+
 <h2 id="object-物件-類別的實體">Object 物件 (類別的實體)</h2>
 
 <p>有了 Person 類別後，接著我們要使用<code>new</code>這個關鍵字針對 Person 類別做「實體化」的動作，來產生 person1 、 person2 兩個物件：</p>
@@ -79,6 +81,8 @@ var person2 = new Person();
 <p><code>new</code>語法會產生一個使用者自訂型別或任何一個有建構式函數的 Javascript 內嵌物件型別的<strong>實體</strong>。</p>
 
 <p>在「實體化」的動作裡，建構式會被呼叫，如果我們需要產生或是初始化物件的屬性值時，就可以在建構式裡面處理。而實體化後，變數<code>person1</code>存放的物件型別就是 object ，我們可以透過<code>console.log(typeof person1);</code>的輸出結果得知。</p>
+
+
 
 <h2 id="物件的產生方式">物件的產生方式</h2>
 
@@ -109,6 +113,8 @@ var person2 = new Person();
 console.log(person.getFullName());
 </code></pre>
 
+
+
 <h3 id="關鍵字new範例">關鍵字<code>new</code>範例</h3>
 
 <p>使用<code>new Object()</code>語法建立一個物件，接著指派給<code>person</code>變數。</p>
@@ -124,6 +130,8 @@ person.getFullName = function () {    // 定義一個方法
 // logs "John Smith"
 console.log(person.getFullName());
 </code></pre>
+
+
 
 <h3 id="建構式範例">建構式範例</h3>
 
@@ -151,7 +159,11 @@ console.log(Person.getFullName);
   <p><strong>注意：</strong> <code>Person.firstName</code>會輸出”undefined”的原因，是因為<code>Person</code>是型別，透過<code>new</code>實體化產生物件後，才能使用建構式裡定義好的屬性與方法。 </p>
 </blockquote>
 
+
+
 <h3 id="函數範例">函數範例</h3>
+
+
 
 <h2 id="property-屬性">Property 屬性</h2>
 
@@ -169,6 +181,8 @@ var person2 = new Person('Bob');
 console.log('person1 is ' + person1.firstName); // logs "person1 is Alice"
 console.log('person2 is ' + person2.firstName); // logs "person2 is Bob"
 </code></pre>
+
+
 
 <h2 id="method-方法">Method 方法</h2>
 
