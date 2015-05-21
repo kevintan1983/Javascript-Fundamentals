@@ -183,15 +183,13 @@ console.log(Person.getFullName);
 
 <ul>
 <li>建構式範例透過<code>this</code>定義 context 端可以使用的屬性與方法</li>
-<li>函數範例透過<code>return</code>定義了 Kev-Value pair 讓 context 端可以使用的屬性與方法</li>
+<li>函數範例透過<code>return</code>定義了 Key-Value pair ，包含了可以讓 context 端使用的屬性與方法</li>
+<li>函數不需透過<code>new</code>產生物件即可讓 context 端使用</li>
 </ul>
 
 <p>範例如下：</p>
 
-<pre><code>var Person = function(_firstName, _lastName) {
-    var firstName = _firstName;
-    var lastName = _lastName;
-
+<pre><code>var Person = function(firstName, lastName) {
     return {
         "firstName": firstName,
         "lastName": lastName,
