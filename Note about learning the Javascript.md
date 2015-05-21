@@ -37,14 +37,13 @@
 <li>Object = 物件，類別的實體化</li>
 <li>Type = 型別</li>
 <li>Function = 函式</li>
+<li>Function Scope = 函式作用域</li>
 <li>Class = 類別，用來定義物件的特性，像是行為以及屬性</li>
 <li>Method = 方法，描述物件的行為</li>
 <li>Constructor = 建構式，在物件被實體化的過程當中會被呼叫的方法，命名通常與類別名稱一致</li>
 <li>Property = 物件的屬性值</li>
 <li>Object Literal = 「實字模式」或「物件實體語法」，用大括弧<code>{}</code>符號產生物件的方式</li>
 </ol>
-
-
 
 <h2 id="overview">Overview</h2>
 
@@ -86,6 +85,25 @@ var person2 = new Person();
 
 
 
+<h2 id="function-scope-函數作用域">Function Scope 函數作用域</h2>
+
+<p>在Javascript裡面定義變數時，可以依照變數擺放的位置來決定該變數是全域變數或是局部變數。當我們將宣告的變數放置在函數內，這時我們稱其為區域變數。區域變數的生命週期會隨著函數的結束而消失，區域變數被存取的範圍僅限於該函數本身，此時我們稱該範圍為函數作用域。</p>
+
+<p>當宣告的變數放在函數外時會被視為全域變數，全域變數的生命週期會隨著整個程式結束才消失，而且在任一函數內都可存取全域變數的值。</p>
+
+<pre><code>var x = 1;
+
+function Add (y) {
+    x = x + 1;
+    var result = x + y;
+    return result;
+};
+
+console.log(Add(3)); // logs "5"
+console.log(x);      // logs "2"
+console.log(y);      // logs "ReferenceError: y is not defined"
+</code></pre>
+
 <h2 id="物件的產生方式">物件的產生方式</h2>
 
 <p>產生物件的主要方式列表如下：</p>
@@ -103,7 +121,7 @@ var person2 = new Person();
 
 <p>透過大括弧<code>{}</code>符號產生物件的方式。大括弧內的<code>this</code>指的是 person 物件自己本身。</p>
 
-<pre><code>var person = {
+<pre><code>var Person = {
     firstName: 'John',             // 定義第一個屬性
     lastName: 'Smith',             // 定義第二個屬性
     getFullName: function() {      // 定義一個方法
@@ -112,28 +130,24 @@ var person2 = new Person();
 };
 
 // logs "John Smith"
-console.log(person.getFullName());
+console.log(Person.getFullName());
 </code></pre>
-
-
 
 <h3 id="關鍵字new範例">關鍵字<code>new</code>範例</h3>
 
 <p>使用<code>new Object()</code>語法建立一個物件，接著指派給<code>person</code>變數。</p>
 
-<pre><code>var person = new Object();            // 建立一個空的物件
-person.firstName = "John";            // 定義第一個屬性
-person.lastName = "Smith";            // 定義第二個屬性
+<pre><code>var Person = new Object();            // 建立一個空的物件
+Person.firstName = "John";            // 定義第一個屬性
+Person.lastName = "Smith";            // 定義第二個屬性
 
-person.getFullName = function () {    // 定義一個方法
-    return person.firstName + ' ' + person.lastName;
+Person.getFullName = function () {    // 定義一個方法
+    return Person.firstName + ' ' + Person.lastName;
 };
 
 // logs "John Smith"
-console.log(person.getFullName());
+console.log(Person.getFullName());
 </code></pre>
-
-
 
 <h3 id="建構式範例">建構式範例</h3>
 
@@ -165,23 +179,31 @@ console.log(Person.getFullName);
 
 <h3 id="函數範例">函數範例</h3>
 
-<pre><code>var Person = function(_firstName, _lastName) {
-    var firstName = _firstName;
-    var lastName = _lastName;
+<p>函數範例與建構式範例不同的地方在於：</p>
 
-    return {
-        "firstName": firstName,
-        "lastName": lastName,
-        "getFullName": function() {
-            return firstName + ' ' + lastName;
-        }
-    };
+<ul>
+<li>建構式範例透過<code>this</code>定義 context 端可以使用的屬性與方法</li>
+<li><p>函數範例透過<code>return</code>定義 Kev-Value pair 讓 context 端可以使用的屬性與方法</p>
+
+<p>var Person = function(_firstName, _lastName) { <br>
+    var firstName = _firstName; <br>
+    var lastName = _lastName;</p>
+
+<pre><code>return {
+    "firstName": firstName,
+    "lastName": lastName,
+    "getFullName": function() {
+        return firstName + ' ' + lastName;
+    }
 };
-
-// logs "John Smith"
-var instance = Person('John','Smith');
-console.log(instance.getFullName());
 </code></pre>
+
+<p>};</p>
+
+<p>// logs “John Smith” <br>
+var instance = Person(‘John’,’Smith’); <br>
+console.log(instance.getFullName());</p></li>
+</ul>
 
 <h2 id="property-屬性">Property 屬性</h2>
 
