@@ -183,27 +183,28 @@ console.log(Person.getFullName);
 
 <ul>
 <li>建構式範例透過<code>this</code>定義 context 端可以使用的屬性與方法</li>
-<li><p>函數範例透過<code>return</code>定義 Kev-Value pair 讓 context 端可以使用的屬性與方法</p>
-
-<p>var Person = function(_firstName, _lastName) { <br>
-    var firstName = _firstName; <br>
-    var lastName = _lastName;</p>
-
-<pre><code>return {
-    "firstName": firstName,
-    "lastName": lastName,
-    "getFullName": function() {
-        return firstName + ' ' + lastName;
-    }
-};
-</code></pre>
-
-<p>};</p>
-
-<p>// logs “John Smith” <br>
-var instance = Person(‘John’,’Smith’); <br>
-console.log(instance.getFullName());</p></li>
+<li>函數範例透過<code>return</code>定義了 Kev-Value pair 讓 context 端可以使用的屬性與方法</li>
 </ul>
+
+<p>範例如下：</p>
+
+<pre><code>var Person = function(_firstName, _lastName) {
+    var firstName = _firstName;
+    var lastName = _lastName;
+
+    return {
+        "firstName": firstName,
+        "lastName": lastName,
+        "getFullName": function() {
+            return firstName + ' ' + lastName;
+        }
+    };
+};
+
+// logs "John Smith"
+var instance = Person('John','Smith');
+console.log(instance.getFullName());
+</code></pre>
 
 <h2 id="property-屬性">Property 屬性</h2>
 
