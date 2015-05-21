@@ -165,7 +165,23 @@ console.log(Person.getFullName);
 
 <h3 id="函數範例">函數範例</h3>
 
+<pre><code>var Person = function(_firstName, _lastName) {
+    var firstName = _firstName;
+    var lastName = _lastName;
 
+    return {
+        "firstName": firstName,
+        "lastName": lastName,
+        "getFullName": function() {
+            return firstName + ' ' + lastName;
+        }
+    };
+};
+
+// logs "John Smith"
+var instance = Person('John','Smith');
+console.log(instance.getFullName());
+</code></pre>
 
 <h2 id="property-屬性">Property 屬性</h2>
 
