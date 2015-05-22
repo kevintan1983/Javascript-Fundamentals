@@ -5,6 +5,7 @@
 <li><a href="#overview">Overview</a></li>
 <li><a href="#class-類別">Class 類別</a></li>
 <li><a href="#object-物件-類別的實體">Object 物件 (類別的實體)</a></li>
+<li><a href="#function-scope-函數作用域">Function Scope 函數作用域</a></li>
 <li><a href="#物件的產生方式">物件的產生方式</a><ul>
 <li><a href="#實字模式範例">實字模式範例</a></li>
 <li><a href="#關鍵字new範例">關鍵字new範例</a></li>
@@ -14,6 +15,7 @@
 </li>
 <li><a href="#property-屬性">Property 屬性</a></li>
 <li><a href="#method-方法">Method 方法</a></li>
+<li><a href="#nodejs-學習心得">Node.js 學習心得</a></li>
 </ul>
 </li>
 </ul>
@@ -44,6 +46,8 @@
 <li>Property = 物件的屬性值</li>
 <li>Object Literal = 「實字模式」或「物件實體語法」，用大括弧<code>{}</code>符號產生物件的方式</li>
 </ol>
+
+
 
 <h2 id="overview">Overview</h2>
 
@@ -104,6 +108,8 @@ console.log(x);      // logs "2"
 console.log(y);      // logs "ReferenceError: y is not defined"
 </code></pre>
 
+
+
 <h2 id="物件的產生方式">物件的產生方式</h2>
 
 <p>產生物件的主要方式列表如下：</p>
@@ -133,6 +139,8 @@ console.log(y);      // logs "ReferenceError: y is not defined"
 console.log(Person.getFullName());
 </code></pre>
 
+
+
 <h3 id="關鍵字new範例">關鍵字<code>new</code>範例</h3>
 
 <p>使用<code>new Object()</code>語法建立一個物件，接著指派給<code>person</code>變數。</p>
@@ -148,6 +156,8 @@ Person.getFullName = function () {    // 定義一個方法
 // logs "John Smith"
 console.log(Person.getFullName());
 </code></pre>
+
+
 
 <h3 id="建構式範例">建構式範例</h3>
 
@@ -204,6 +214,8 @@ var instance = Person('John','Smith');
 console.log(instance.getFullName());
 </code></pre>
 
+
+
 <h2 id="property-屬性">Property 屬性</h2>
 
 <p>屬性是存放在類別裡的變數，每一個類別實體化後產生的物件都會有定義好的屬性，而且屬性的預設值可以透過類別的建構式裡面設定。那我們如何在物件裡面存取該類別的屬性呢？這時候可以透過<code>this.Property</code>這個語法，取得或設定這個屬性的值：</p>
@@ -241,3 +253,24 @@ var person2 = new Person("Bob");
 person1.sayHello(); // logs "Hello, I'm Alice"
 person2.sayHello(); // logs "Hello, I'm Bob"
 </code></pre>
+
+
+
+<h2 id="nodejs-學習心得">Node.js 學習心得</h2>
+
+<p>Node.js 是一套以非同步、事件驅動設計為主的套件，同時也適合用來建置高擴展性的網站程式。我們從這個 “hello world” 的範例裡面可以清楚瞭解到 Node.js 可以同時處理許多 HTTP 連線，每當有新連線時，會觸發 callback 事件處理每個 request ，當沒有連線時，Node.js 則是呈現休眠狀態。</p>
+
+<pre><code>var http = require('http');
+
+http.createServer(function (req, res)) {
+    res.writeHead(200, {Content-Type': 'text/plain'});
+    res.end('Hello World\n');
+}).listen(3000, "127.0.0.1");
+
+console.log('Server running at http://127.0.0.1:3000/');
+</code></pre>
+
+<p>這個範例顯示出 Node.js 與其他技術使用多執行緒處理 request 差別的地方。相較來說，以多執行緒為基礎的方式處理 request 除了效率較低之外還需要煩惱 process 資源被鎖住的問題。</p>
+
+<p>Node.js 平行處理模式是透過 <strong>event loop</strong> 來處理。 <br>
+<img src="https://developer.mozilla.org/files/4617/default.svg" alt="Event Loop" title=""></p>
