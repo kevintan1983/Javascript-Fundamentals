@@ -65,19 +65,15 @@
 
 <h2 id="class-類別">Class 類別</h2>
 
-<p>在 Javascript 裡面沒有用來宣告類別的語法，但我們可以透過函數來定義類別。在下面的範例裡面，我們使用函數建立一個名為 <strong>Person</strong> 的類別，而這個類別的建構式是一個空的函數：</p>
-
-
+<p>在 Javascript 裡面沒有用來宣告類別的語法，但我們可以透過函式來定義類別。在下面的範例裡面，我們使用函式建立一個名為 <strong>Person</strong> 的類別，而這個類別的建構式是一個空的函式：</p>
 
 <pre class="prettyprint"><code class=" hljs javascript"><span class="hljs-keyword">var</span> Person = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>};</code></pre>
 
-<p>除了透過函數建立類別的方法外，後面的篇幅會介紹其他產生類別實體的方式。</p>
+<p>除了透過函式建立類別的方法外，後面的篇幅會介紹其他產生類別實體的方式。</p>
 
 <blockquote>
-  <p><strong>注意：</strong> <code>Person</code>這個變數背後指向一個空的函數，且在被實體化之前，變數的型別會是 Function。</p>
+  <p><strong>注意：</strong> <code>Person</code>這個變數背後指向一個空的函式，且在被實體化之前，變數的型別會是 Function。</p>
 </blockquote>
-
-
 
 <h2 id="object-物件-類別的實體">Object 物件 (類別的實體)</h2>
 
@@ -88,19 +84,15 @@
 <pre class="prettyprint"><code class=" hljs cs"><span class="hljs-keyword">var</span> person1 = <span class="hljs-keyword">new</span> Person();
 <span class="hljs-keyword">var</span> person2 = <span class="hljs-keyword">new</span> Person();</code></pre>
 
-<p><code>new</code>語法會產生一個使用者自訂型別或任何一個有建構式函數的 Javascript 內嵌物件型別的<strong>實體</strong>。</p>
+<p><code>new</code>語法會產生一個使用者自訂型別或任何一個有建構式函式的 Javascript 內嵌物件型別的<strong>實體</strong>。</p>
 
 <p>在「實體化」的動作裡，建構式會被呼叫，如果我們需要產生或是初始化物件的屬性值時，就可以在建構式裡面處理。而實體化後，變數<code>person1</code>存放的物件型別就是 object ，我們可以透過<code>console.log(typeof person1);</code>的輸出結果得知。</p>
 
+<h2 id="function-scope-函式作用域">Function Scope 函式作用域</h2>
 
+<p>在Javascript裡面定義變數時，可以依照變數擺放的位置來決定該變數是全域變數或是局部變數。當我們將宣告的變數放置在函式內，這時我們稱其為區域變數。區域變數的生命週期會隨著函式的結束而消失，區域變數被存取的範圍僅限於該函式本身，此時我們稱該範圍為函式作用域。</p>
 
-<h2 id="function-scope-函數作用域">Function Scope 函數作用域</h2>
-
-<p>在Javascript裡面定義變數時，可以依照變數擺放的位置來決定該變數是全域變數或是局部變數。當我們將宣告的變數放置在函數內，這時我們稱其為區域變數。區域變數的生命週期會隨著函數的結束而消失，區域變數被存取的範圍僅限於該函數本身，此時我們稱該範圍為函數作用域。</p>
-
-<p>當宣告的變數放在函數外時會被視為全域變數，全域變數的生命週期會隨著整個程式結束才消失，而且在任一函數內都可存取全域變數的值。</p>
-
-
+<p>當宣告的變數放在函式外時會被視為全域變數，全域變數的生命週期會隨著整個程式結束才消失，而且在任一函式內都可存取全域變數的值。</p>
 
 <pre class="prettyprint"><code class=" hljs coffeescript"><span class="hljs-reserved">var</span> x = <span class="hljs-number">1</span>;
 
@@ -124,10 +116,8 @@
 <li>實字模式</li>
 <li>關鍵字<code>new</code> </li>
 <li>建構式</li>
-<li>函數</li>
+<li>函式</li>
 </ol>
-
-
 
 <h3 id="實字模式範例">實字模式範例</h3>
 
@@ -196,19 +186,17 @@ console.log(Person.getFullName);</code></pre>
 
 
 
-<h3 id="函數範例">函數範例</h3>
+<h3 id="函式範例">函式範例</h3>
 
-<p>函數範例與建構式範例不同的地方在於：</p>
+<p>函式範例與建構式範例不同的地方在於：</p>
 
 <ul>
 <li>建構式範例透過<code>this</code>定義 context 端可以使用的屬性與方法</li>
-<li>函數範例透過<code>return</code>定義了 Key-Value pair ，包含了可以讓 context 端使用的屬性與方法</li>
-<li>函數不需透過<code>new</code>產生物件即可讓 context 端使用</li>
+<li>函式範例透過<code>return</code>定義了 Key-Value pair ，包含了可以讓 context 端使用的屬性與方法</li>
+<li>函式不需透過<code>new</code>產生物件即可讓 context 端使用</li>
 </ul>
 
 <p>範例如下：</p>
-
-
 
 <pre class="prettyprint"><code class=" hljs javascript"><span class="hljs-keyword">var</span> Person = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(firstName, lastName)</span> {</span>
     <span class="hljs-keyword">return</span> {
@@ -248,7 +236,7 @@ console.log(instance.getFullName());</code></pre>
 
 <h2 id="method-方法">Method 方法</h2>
 
-<p>我們透過類別上定義好的方法，來決定這個類別會有那些抽象行為。那我們如何定義方法的具體行為呢？這時候可以透過指派函數給方法。拿我們之前使用的<code>Person</code>範例來說，我們想替這個類別增加一個<code>sayHello()</code>的方法，這時候我們可以透過<code>this</code>這個關鍵字，然後定義一個<code>sayHello</code>屬性，在等號右邊的<code>function()</code>寫法表示我們將函數指定給<code>sayHello</code>屬性，例如<code>this.sayHello = 函數</code>，接著我們就可以在函數裡面實作方法內容了。</p>
+<p>我們透過類別上定義好的方法，來決定這個類別會有那些抽象行為。那我們如何定義方法的具體行為呢？這時候可以透過指派函式給方法。拿我們之前使用的<code>Person</code>範例來說，我們想替這個類別增加一個<code>sayHello()</code>的方法，這時候我們可以透過<code>this</code>這個關鍵字，然後定義一個<code>sayHello</code>屬性，在等號右邊的<code>function()</code>寫法表示我們將函式指定給<code>sayHello</code>屬性，例如<code>this.sayHello = 函式</code>，接著我們就可以在函式裡面實作方法內容了。</p>
 
 <pre class="prettyprint"><code class=" hljs javascript"><span class="hljs-keyword">var</span> Person = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(firstName)</span> {</span>
   <span class="hljs-keyword">this</span>.firstName = firstName;
