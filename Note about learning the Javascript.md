@@ -248,9 +248,7 @@ console.log(instance.getFullName());</code></pre>
 
 <h2 id="method-方法">Method 方法</h2>
 
-<p>我們透過類別上定義好的方法，來決定這個類別會有那些抽象行為。那我們如何定義方法的具體行為呢？這時候可以透過指派函數給方法。拿我們之前使用的<code>Person</code>範例來說，我們想替這個類別增加一個<code>sayHello()</code>的方法，這時候我們可以透<code>this</code>這個關鍵字，然後定義一個<code>sayHello</code>屬性，在等號右邊的<code>function()</code>寫法表示我們將函數指定給<code>sayHello</code>屬性，例如<code>this.sayHello = 函數</code>，接著我們就可以在函數裡面實作方法內容了。</p>
-
-
+<p>我們透過類別上定義好的方法，來決定這個類別會有那些抽象行為。那我們如何定義方法的具體行為呢？這時候可以透過指派函數給方法。拿我們之前使用的<code>Person</code>範例來說，我們想替這個類別增加一個<code>sayHello()</code>的方法，這時候我們可以透過<code>this</code>這個關鍵字，然後定義一個<code>sayHello</code>屬性，在等號右邊的<code>function()</code>寫法表示我們將函數指定給<code>sayHello</code>屬性，例如<code>this.sayHello = 函數</code>，接著我們就可以在函數裡面實作方法內容了。</p>
 
 <pre class="prettyprint"><code class=" hljs javascript"><span class="hljs-keyword">var</span> Person = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(firstName)</span> {</span>
   <span class="hljs-keyword">this</span>.firstName = firstName;
