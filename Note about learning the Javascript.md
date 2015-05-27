@@ -32,10 +32,8 @@
 
 <blockquote>
   <p>Written with <a href="https://stackedit.io/">StackEdit</a> <br>
-  這裡記錄了我學習<code>Javascript</code>的心得</p>
+  這裡記錄了我學習 <code>Javascript</code> 的心得</p>
 </blockquote>
-
-
 
 <h2 id="文詞對照">文詞對照</h2>
 
@@ -48,10 +46,8 @@
 <li>Method = 方法，描述物件的行為</li>
 <li>Constructor = 建構式，在物件被實體化的過程當中會被呼叫的方法，命名通常與類別名稱一致</li>
 <li>Property = 物件的屬性值</li>
-<li>Object Literal = 「實字模式」或「物件實體語法」，用大括弧<code>{}</code>符號產生物件的方式</li>
+<li>Object Literal = 「實字模式」或「物件實體語法」，用大括弧 <code>{}</code> 符號產生物件的方式</li>
 </ol>
-
-
 
 <h2 id="overview">Overview</h2>
 
@@ -75,25 +71,19 @@
 <p>除了透過函式建立類別的方法外，後面的篇幅會介紹其他產生類別實體的方式。</p>
 
 <blockquote>
-  <p><strong>注意：</strong> <code>Person</code>這個變數背後指向一個空的函式，且在被實體化之前，變數的型別會是 Function。</p>
+  <p><strong>注意：</strong> <code>Person</code> 這個變數背後指向一個空的函式，且在被實體化之前，變數的型別會是 Function。</p>
 </blockquote>
-
-
 
 <h2 id="object-物件-類別的實體">Object 物件 (類別的實體)</h2>
 
-<p>有了 Person 類別後，接著我們要使用<code>new</code>這個關鍵字針對 Person 類別做「實體化」的動作，來產生 person1 、 person2 兩個物件：</p>
-
-
+<p>有了 Person 類別後，接著我們要使用 <code>new</code> 這個關鍵字針對 Person 類別做「實體化」的動作，來產生 person1 、 person2 兩個物件：</p>
 
 <pre class="prettyprint"><code class=" hljs cs"><span class="hljs-keyword">var</span> person1 = <span class="hljs-keyword">new</span> Person();
 <span class="hljs-keyword">var</span> person2 = <span class="hljs-keyword">new</span> Person();</code></pre>
 
-<p><code>new</code>語法會產生一個使用者自訂型別或任何一個有建構式函式的 Javascript 內嵌物件型別的<strong>實體</strong>。</p>
+<p><code>new</code> 語法會產生一個使用者自訂型別或任何一個有建構式函式的 Javascript 內嵌物件型別的<strong>實體</strong>。</p>
 
-<p>在「實體化」的動作裡，建構式會被呼叫，如果我們需要產生或是初始化物件的屬性值時，就可以在建構式裡面處理。而實體化後，變數<code>person1</code>存放的物件型別就是 object ，我們可以透過<code>console.log(typeof person1);</code>的輸出結果得知。</p>
-
-
+<p>在「實體化」的動作裡，建構式會被呼叫，如果我們需要產生或是初始化物件的屬性值時，就可以在建構式裡面處理。而實體化後，變數 <code>person1</code> 存放的物件型別就是 object ，我們可以透過 <code>console.log(typeof person1);</code> 的輸出結果得知。</p>
 
 <h2 id="function-scope-函式作用域">Function Scope 函式作用域</h2>
 
@@ -123,18 +113,14 @@
 
 <ol>
 <li>實字模式</li>
-<li>關鍵字<code>new</code> </li>
+<li>關鍵字 <code>new</code> </li>
 <li>建構式</li>
 <li>函式</li>
 </ol>
 
-
-
 <h3 id="實字模式範例">實字模式範例</h3>
 
-<p>透過大括弧<code>{}</code>符號產生物件的方式。大括弧內的<code>this</code>指的是 person 物件自己本身。</p>
-
-
+<p>透過大括弧 <code>{}</code> 符號產生物件的方式。大括弧內的 <code>this</code> 指的是 person 物件自己本身。</p>
 
 <pre class="prettyprint"><code class=" hljs javascript"><span class="hljs-keyword">var</span> Person = {
     firstName: <span class="hljs-string">'John'</span>,             <span class="hljs-comment">// 定義第一個屬性</span>
@@ -149,11 +135,9 @@ console.log(Person.getFullName());</code></pre>
 
 
 
-<h3 id="關鍵字new範例">關鍵字<code>new</code>範例</h3>
+<h3 id="關鍵字-new-範例">關鍵字 <code>new</code> 範例</h3>
 
-<p>使用<code>new Object()</code>語法建立一個物件，接著指派給<code>person</code>變數。</p>
-
-
+<p>使用 <code>new Object()</code> 語法建立一個物件，接著指派給 <code>person</code> 變數。</p>
 
 <pre class="prettyprint"><code class=" hljs javascript"><span class="hljs-keyword">var</span> Person = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>();            <span class="hljs-comment">// 建立一個空的物件</span>
 Person.firstName = <span class="hljs-string">"John"</span>;            <span class="hljs-comment">// 定義第一個屬性</span>
@@ -202,14 +186,12 @@ console.log(Person.getFullName);</code></pre>
 <p>函式範例與建構式範例不同的地方在於：</p>
 
 <ul>
-<li>建構式範例透過<code>this</code>定義 context 端可以使用的屬性與方法</li>
-<li>函式範例透過<code>return</code>定義了 Key-Value pair ，包含了可以讓 context 端使用的屬性與方法</li>
-<li>函式不需透過<code>new</code>產生物件即可讓 context 端使用</li>
+<li>建構式範例透過 <code>this</code> 定義 context 端可以使用的屬性與方法</li>
+<li>函式範例透過 <code>return</code> 定義了 Key-Value pair ，包含了可以讓 context 端使用的屬性與方法</li>
+<li>函式不需透過 <code>new</code> 產生物件即可讓 context 端使用</li>
 </ul>
 
 <p>範例如下：</p>
-
-
 
 <pre class="prettyprint"><code class=" hljs javascript"><span class="hljs-keyword">var</span> Person = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(firstName, lastName)</span> {</span>
     <span class="hljs-keyword">return</span> {
@@ -229,9 +211,7 @@ console.log(instance.getFullName());</code></pre>
 
 <h2 id="property-屬性">Property 屬性</h2>
 
-<p>屬性是存放在類別裡的變數，每一個類別實體化後產生的物件都會有定義好的屬性，而且屬性的預設值可以透過類別的建構式裡面設定。那我們如何在物件裡面存取該類別的屬性呢？這時候可以透過<code>this.Property</code>這個語法，取得或設定這個屬性的值：</p>
-
-
+<p>屬性是存放在類別裡的變數，每一個類別實體化後產生的物件都會有定義好的屬性，而且屬性的預設值可以透過類別的建構式裡面設定。那我們如何在物件裡面存取該類別的屬性呢？這時候可以透過 <code>this.Property</code> 這個語法，取得或設定這個屬性的值：</p>
 
 <pre class="prettyprint"><code class=" hljs coffeescript"><span class="hljs-reserved">var</span> Person = <span class="hljs-reserved">function</span> (firstName) {
   <span class="hljs-keyword">this</span>.firstName = firstName;
@@ -249,9 +229,7 @@ console.log(instance.getFullName());</code></pre>
 
 <h2 id="method-方法">Method 方法</h2>
 
-<p>我們透過類別上定義好的方法，來決定這個類別會有那些抽象行為。那我們如何定義方法的具體行為呢？這時候可以透過指派函式給方法。拿我們之前使用的<code>Person</code>範例來說，我們想替這個類別增加一個<code>sayHello()</code>的方法，這時候我們可以透過<code>this</code>這個關鍵字，然後定義一個<code>sayHello</code>屬性，在等號右邊的<code>function()</code>寫法表示我們將函式指定給<code>sayHello</code>屬性，例如<code>this.sayHello = 函式</code>，接著我們就可以在函式裡面實作方法內容了。</p>
-
-
+<p>我們透過類別上定義好的方法，來決定這個類別會有那些抽象行為。那我們如何定義方法的具體行為呢？這時候可以透過指派函式給方法。拿我們之前使用的 <code>Person</code> 範例來說，我們想替這個類別增加一個 <code>sayHello()</code> 的方法，這時候我們可以透過 <code>this</code> 這個關鍵字，然後定義一個 <code>sayHello</code> 屬性，在等號右邊的 <code>function()</code> 寫法表示我們將函式指定給 <code>sayHello</code> 屬性，例如 <code>this.sayHello = 函式</code> ，接著我們就可以在函式裡面實作方法內容了。</p>
 
 <pre class="prettyprint"><code class=" hljs javascript"><span class="hljs-keyword">var</span> Person = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(firstName)</span> {</span>
   <span class="hljs-keyword">this</span>.firstName = firstName;
@@ -321,7 +299,7 @@ x(<span class="hljs-number">21</span>);</code></pre>
 
 
 
-<div class="sequence-diagram"><svg style="overflow: hidden; position: relative; left: -0.599976px; top: -0.150391px;" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="804.0000038146973" version="1.1" height="501.6000061035156"><desc>Created with Raphaël 2.1.2</desc><defs><path id="raphael-marker-block" d="M5,0 0,2.5 5,5z" stroke-linecap="round"></path><marker refY="2.5" refX="2.5" orient="auto" markerWidth="5" markerHeight="5" id="raphael-marker-endblock55-obj32"><use stroke="none" fill="#000" stroke-width="1.0000" transform="rotate(180 2.5 2.5) scale(1,1)" xlink:href="#raphael-marker-block"></use></marker><marker refY="2.5" refX="2.5" orient="auto" markerWidth="5" markerHeight="5" id="raphael-marker-endblock55-obj38"><use stroke="none" fill="#000" stroke-width="1.0000" transform="rotate(180 2.5 2.5) scale(1,1)" xlink:href="#raphael-marker-block"></use></marker><marker refY="2.5" refX="2.5" orient="auto" markerWidth="5" markerHeight="5" id="raphael-marker-endblock55-obj44"><use stroke="none" fill="#000" stroke-width="1.0000" transform="rotate(180 2.5 2.5) scale(1,1)" xlink:href="#raphael-marker-block"></use></marker><marker refY="2.5" refX="2.5" orient="auto" markerWidth="5" markerHeight="5" id="raphael-marker-endblock55-obj47"><use stroke="none" fill="#000" stroke-width="1.0000" transform="rotate(180 2.5 2.5) scale(1,1)" xlink:href="#raphael-marker-block"></use></marker></defs><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="39.20000076293945" width="78.4000015258789" y="20" x="10"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="19.200000762939453" width="58.400001525878906" y="30" x="21.200000762939453"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="39.60000038146973" x="49.20000076293945" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5.600002288818359">Message</tspan></text><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="39.20000076293945" width="78.4000015258789" y="442.4000053405762" x="10"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="19.200000762939453" width="58.400001525878906" y="452.4000244140625" x="21.200000762939453"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="462.0000057220459" x="49.20000076293945" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5.600017547607422">Message</tspan></text><path stroke-width="2" d="M49.20000076293945,59.20000076293945L49.20000076293945,442.4000053405762" stroke="#000000" fill="none" style=""></path><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="39.20000076293945" width="39.20000076293945" y="20" x="226.40000343322754"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="19.200000762939453" width="19.200000762939453" y="30" x="236.39999389648438"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="39.60000038146973" x="246.00000381469727" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5.600002288818359">x()</tspan></text><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="39.20000076293945" width="39.20000076293945" y="442.4000053405762" x="226.40000343322754"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="19.200000762939453" width="19.200000762939453" y="452.4000244140625" x="236.39999389648438"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="462.0000057220459" x="246.00000381469727" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5.600017547607422">x()</tspan></text><path stroke-width="2" d="M246.00000381469727,59.20000076293945L246.00000381469727,442.4000053405762" stroke="#000000" fill="none" style=""></path><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="39.20000076293945" width="40" y="20" x="476.8000068664551"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="19.200000762939453" width="20" y="30" x="486.8000183105469"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="39.60000038146973" x="496.8000068664551" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5.600002288818359">y()</tspan></text><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="39.20000076293945" width="40" y="442.4000053405762" x="476.8000068664551"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="19.200000762939453" width="20" y="452.4000244140625" x="486.8000183105469"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="462.0000057220459" x="496.8000068664551" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5.600017547607422">y()</tspan></text><path stroke-width="2" d="M496.8000068664551,59.20000076293945L496.8000068664551,442.4000053405762" stroke="#000000" fill="none" style=""></path><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="19.200000762939453" width="32.79999923706055" y="74.5999984741211" x="132"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="84.20000076293945" x="147.60000228881836" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5.600000381469727">calls</tspan></text><path stroke-dasharray="0" marker-end="url(#raphael-marker-endblock55-obj32)" stroke-width="2" d="M49.20000076293945,98.4000015258789C49.20000076293945,98.4000015258789,210.351078315108,98.4000015258789,240.99968412886273,98.4000015258789" stroke="#000000" fill="none" style=""></path><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="65.20000076293945" width="210.8000030517578" y="118.4000015258789" x="266.00000381469727"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="55.199989318847656" width="200.80001831054688" y="123.4000015258789" x="271.3999938964844"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="151.00000190734863" x="371.4000053405762" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="-12.399999618530273">1. create 1st stack frame for x() </tspan><tspan x="371.4000053405762" dy="18"> 2. create heap for argument p </tspan><tspan x="371.4000053405762" dy="18"> 3. create heap for variable m</tspan></text><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="19.200000762939453" width="32.79999923706055" y="199" x="355.79998779296875"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="208.60000228881836" x="371.4000053405762" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5.599992752075195">calls</tspan></text><path stroke-dasharray="0" marker-end="url(#raphael-marker-endblock55-obj38)" stroke-width="2" d="M246.00000381469727,222.8000030517578C246.00000381469727,222.8000030517578,456.4424303866108,222.8000030517578,491.7901817248619,222.8000030517578" stroke="#000000" fill="none" style=""></path><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="65.20000076293945" width="217.1999969482422" y="242.8000030517578" x="516.8000068664551"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="55.20002746582031" width="207.20001220703125" y="247.8000030517578" x="522.2000122070312"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="275.40000343322754" x="625.4000053405762" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="-12.399984359741211">1. create 2nd stack frame for y() </tspan><tspan x="625.4000053405762" dy="18"> 2. create heap for argument b </tspan><tspan x="625.4000053405762" dy="18"> 3. create heap for variable a</tspan></text><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="37.20001220703125" width="182.39999389648438" y="314.4000244140625" x="281.3999938964844"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="333.00000381469727" x="371.4000053405762" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="-3.3999900817871094">returns result and </tspan><tspan x="371.4000053405762" dy="18"> pop out the 2nd stack frame</tspan></text><path stroke-dasharray="6,2" marker-end="url(#raphael-marker-endblock55-obj44)" stroke-width="2" d="M496.8000068664551,365.2000045776367C496.8000068664551,365.2000045776367,286.35758029454155,365.2000045776367,251.00982895629045,365.2000045776367" stroke="#000000" fill="none" style=""></path><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="37.20001220703125" width="176.8000030517578" y="371.6000061035156" x="60.40000534057617"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="390.2000045776367" x="147.60000228881836" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="-3.4000015258789062">returns result and </tspan><tspan x="147.60000228881836" dy="18"> pop out the 1st stack frame</tspan></text><path stroke-dasharray="6,2" marker-end="url(#raphael-marker-endblock55-obj47)" stroke-width="2" d="M246.00000381469727,422.4000053405762C246.00000381469727,422.4000053405762,84.84892626252872,422.4000053405762,54.20032044877401,422.4000053405762" stroke="#000000" fill="none" style=""></path></svg></div>
+<div class="sequence-diagram"><svg style="overflow: hidden; position: relative; left: -0.599976px; top: -0.516602px;" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="804.0000038146973" version="1.1" height="501.6000061035156"><desc>Created with Raphaël 2.1.2</desc><defs><path id="raphael-marker-block" d="M5,0 0,2.5 5,5z" stroke-linecap="round"></path><marker refY="2.5" refX="2.5" orient="auto" markerWidth="5" markerHeight="5" id="raphael-marker-endblock55-obj122"><use stroke="none" fill="#000" stroke-width="1.0000" transform="rotate(180 2.5 2.5) scale(1,1)" xlink:href="#raphael-marker-block"></use></marker><marker refY="2.5" refX="2.5" orient="auto" markerWidth="5" markerHeight="5" id="raphael-marker-endblock55-obj128"><use stroke="none" fill="#000" stroke-width="1.0000" transform="rotate(180 2.5 2.5) scale(1,1)" xlink:href="#raphael-marker-block"></use></marker><marker refY="2.5" refX="2.5" orient="auto" markerWidth="5" markerHeight="5" id="raphael-marker-endblock55-obj134"><use stroke="none" fill="#000" stroke-width="1.0000" transform="rotate(180 2.5 2.5) scale(1,1)" xlink:href="#raphael-marker-block"></use></marker><marker refY="2.5" refX="2.5" orient="auto" markerWidth="5" markerHeight="5" id="raphael-marker-endblock55-obj137"><use stroke="none" fill="#000" stroke-width="1.0000" transform="rotate(180 2.5 2.5) scale(1,1)" xlink:href="#raphael-marker-block"></use></marker></defs><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="39.20000076293945" width="78.4000015258789" y="20" x="10"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="19.200000762939453" width="58.400001525878906" y="30" x="21.200000762939453"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="39.60000038146973" x="49.20000076293945" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5.600002288818359">Message</tspan></text><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="39.20000076293945" width="78.4000015258789" y="442.4000053405762" x="10"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="19.200000762939453" width="58.400001525878906" y="452.4000244140625" x="21.200000762939453"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="462.0000057220459" x="49.20000076293945" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5.600017547607422">Message</tspan></text><path stroke-width="2" d="M49.20000076293945,59.20000076293945L49.20000076293945,442.4000053405762" stroke="#000000" fill="none" style=""></path><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="39.20000076293945" width="39.20000076293945" y="20" x="226.40000343322754"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="19.200000762939453" width="19.200000762939453" y="30" x="236.39999389648438"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="39.60000038146973" x="246.00000381469727" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5.600002288818359">x()</tspan></text><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="39.20000076293945" width="39.20000076293945" y="442.4000053405762" x="226.40000343322754"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="19.200000762939453" width="19.200000762939453" y="452.4000244140625" x="236.39999389648438"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="462.0000057220459" x="246.00000381469727" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5.600017547607422">x()</tspan></text><path stroke-width="2" d="M246.00000381469727,59.20000076293945L246.00000381469727,442.4000053405762" stroke="#000000" fill="none" style=""></path><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="39.20000076293945" width="40" y="20" x="476.8000068664551"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="19.200000762939453" width="20" y="30" x="486.8000183105469"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="39.60000038146973" x="496.8000068664551" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5.600002288818359">y()</tspan></text><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="39.20000076293945" width="40" y="442.4000053405762" x="476.8000068664551"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="19.200000762939453" width="20" y="452.4000244140625" x="486.8000183105469"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="462.0000057220459" x="496.8000068664551" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5.600017547607422">y()</tspan></text><path stroke-width="2" d="M496.8000068664551,59.20000076293945L496.8000068664551,442.4000053405762" stroke="#000000" fill="none" style=""></path><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="19.200000762939453" width="32.79999923706055" y="74.5999984741211" x="132"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="84.20000076293945" x="147.60000228881836" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5.600000381469727">calls</tspan></text><path stroke-dasharray="0" marker-end="url(#raphael-marker-endblock55-obj122)" stroke-width="2" d="M49.20000076293945,98.4000015258789C49.20000076293945,98.4000015258789,210.351078315108,98.4000015258789,240.99968412886273,98.4000015258789" stroke="#000000" fill="none" style=""></path><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="65.20000076293945" width="210.8000030517578" y="118.4000015258789" x="266.00000381469727"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="55.199989318847656" width="200.80001831054688" y="123.4000015258789" x="271.3999938964844"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="151.00000190734863" x="371.4000053405762" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="-12.399999618530273">1. create 1st stack frame for x() </tspan><tspan x="371.4000053405762" dy="18"> 2. create heap for argument p </tspan><tspan x="371.4000053405762" dy="18"> 3. create heap for variable m</tspan></text><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="19.200000762939453" width="32.79999923706055" y="199" x="355.79998779296875"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="208.60000228881836" x="371.4000053405762" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5.599992752075195">calls</tspan></text><path stroke-dasharray="0" marker-end="url(#raphael-marker-endblock55-obj128)" stroke-width="2" d="M246.00000381469727,222.8000030517578C246.00000381469727,222.8000030517578,456.4424303866108,222.8000030517578,491.7901817248619,222.8000030517578" stroke="#000000" fill="none" style=""></path><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="65.20000076293945" width="217.1999969482422" y="242.8000030517578" x="516.8000068664551"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="55.20002746582031" width="207.20001220703125" y="247.8000030517578" x="522.2000122070312"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="275.40000343322754" x="625.4000053405762" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="-12.399984359741211">1. create 2nd stack frame for y() </tspan><tspan x="625.4000053405762" dy="18"> 2. create heap for argument b </tspan><tspan x="625.4000053405762" dy="18"> 3. create heap for variable a</tspan></text><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="37.20001220703125" width="182.39999389648438" y="314.4000244140625" x="281.3999938964844"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="333.00000381469727" x="371.4000053405762" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="-3.3999900817871094">returns result and </tspan><tspan x="371.4000053405762" dy="18"> pop out the 2nd stack frame</tspan></text><path stroke-dasharray="6,2" marker-end="url(#raphael-marker-endblock55-obj134)" stroke-width="2" d="M496.8000068664551,365.2000045776367C496.8000068664551,365.2000045776367,286.35758029454155,365.2000045776367,251.00982895629045,365.2000045776367" stroke="#000000" fill="none" style=""></path><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="37.20001220703125" width="176.8000030517578" y="371.6000061035156" x="60.40000534057617"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="390.2000045776367" x="147.60000228881836" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="-3.4000015258789062">returns result and </tspan><tspan x="147.60000228881836" dy="18"> pop out the 1st stack frame</tspan></text><path stroke-dasharray="6,2" marker-end="url(#raphael-marker-endblock55-obj137)" stroke-width="2" d="M246.00000381469727,422.4000053405762C246.00000381469727,422.4000053405762,84.84892626252872,422.4000053405762,54.20032044877401,422.4000053405762" stroke="#000000" fill="none" style=""></path></svg></div>
 
 <p><strong>Heap 堆積</strong> <br>
 物件在被產生時，都會在 Heap 裡產生一個記憶體區塊，且是以無順序的方式擺放。</p>
@@ -346,6 +324,63 @@ x(<span class="hljs-number">21</span>);</code></pre>
 
 <h2 id="module-模組">Module 模組</h2>
 
-<p>在 Node 裡面，一個 .js 檔案就是一個模組。</p>
+<p>在 Node 裡面，一個 .js 檔案就是一個模組。舉例來說，在同一個資料夾裡面，<code>foo.js</code> 引用 <code>circle.js</code> 模組：</p>
 
-<div class="footnotes"><hr><ol><li id="fn:eventloop1">Event Loop 參考資料來源為 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop">MDN</a>. <a href="#fnref:eventloop1" title="Return to article" class="reversefootnote">↩</a></li><li id="fn:eventloop2">Erin Swenson-Healey - <a href="http://blog.carbonfive.com/2013/10/27/the-javascript-event-loop-explained/">The Javascript Event Loop Explained</a>. <a href="#fnref:eventloop2" title="Return to article" class="reversefootnote">↩</a></li></ol></div>
+<p><code>foo.js</code> 的內容</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs coffeescript"><span class="hljs-reserved">var</span> circle = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./circle.js'</span>);
+<span class="hljs-built_in">console</span>.log( <span class="hljs-string">'當半徑為4時，圓的面積為 '</span> + circle.area(<span class="hljs-number">4</span>));</code></pre>
+
+<p>模組 <code>circle.js</code> 的內容</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs javascript"><span class="hljs-keyword">var</span> PI = <span class="hljs-built_in">Math</span>.PI;
+
+exports.area = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(r)</span> {</span>
+  <span class="hljs-keyword">return</span> PI * r * r;
+};
+
+exports.circumference = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(r)</span> {</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-number">2</span> * PI * r;
+};</code></pre>
+
+<p>在 <code>circle.js</code> 模組裡面，透過 <code>exports</code> 這個物件輸出了兩個函式：</p>
+
+<ol>
+<li>area(r) - 計算圓面積</li>
+<li>circumference(r) - 計算圓周長</li>
+</ol>
+
+<p>當我們想輸出更多函式供外部使用時，我們可以將定義好的函式透過 <code>exports</code> 物件輸出。在模組裡使用的變數為私有層級，僅限於模組內使用，像是 <code>circle.js</code> 裡面的 <code>PI</code> 變數。上述的例子是將模組的方法封裝在 <code>exports</code> 物件裡，但如果我們想讓模組輸出的是：</p>
+
+<ol>
+<li>一個建構式函式</li>
+<li>一個已經設定好屬性的物件</li>
+</ol>
+
+<p>此時我們需要將建構式函式或物件封裝在 <code>module.exports</code> 物件裡。以下範例 <code>bar.js</code> 引用 <code>square.js</code> 模組：</p>
+
+<p><code>bar.js</code> 的內容</p>
+
+<pre class="prettyprint"><code class=" hljs coffeescript"><span class="hljs-reserved">var</span> square = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./square.js'</span>);
+<span class="hljs-reserved">var</span> mySquare = square(<span class="hljs-number">2</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'計算平方數 '</span> + mySquare.area());</code></pre>
+
+<p>在這個範例裡面，場景端引用模組後是透過建構式將參數傳入，接著使用模組提供的 <code>area()</code> 方法計算平方數。 為了方便說明，我們把引用模組的部分替換為 <code>module.exports</code> 然後改寫如下：</p>
+
+<pre class="prettyprint"><code class=" hljs coffeescript"><span class="hljs-reserved">var</span> square = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./square.js'</span>);
+<span class="hljs-reserved">var</span> mySquare = <span class="hljs-built_in">module</span>.<span class="hljs-built_in">exports</span>(<span class="hljs-number">2</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'計算平方數 '</span> + <span class="hljs-built_in">module</span>.<span class="hljs-built_in">exports</span>.area());</code></pre>
+
+<p>從場景端裡顯示模組需要輸出 <code>建構式函式</code> 與 <code>area()</code> 方法，接下來看一下模組該如何輸出：</p>
+
+<pre class="prettyprint"><code class=" hljs lua"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(width)</span></span> {
+  <span class="hljs-keyword">return</span> {
+    area: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span> {
+      <span class="hljs-keyword">return</span> width * width;
+    }
+  };
+}</code></pre><div class="footnotes"><hr><ol><li id="fn:eventloop1">Event Loop 參考資料來源為 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop">MDN</a>. <a href="#fnref:eventloop1" title="Return to article" class="reversefootnote">↩</a></li><li id="fn:eventloop2">Erin Swenson-Healey - <a href="http://blog.carbonfive.com/2013/10/27/the-javascript-event-loop-explained/">The Javascript Event Loop Explained</a>. <a href="#fnref:eventloop2" title="Return to article" class="reversefootnote">↩</a></li></ol></div>
