@@ -377,6 +377,8 @@ exports.circumference = <span class="hljs-function"><span class="hljs-keyword">f
 
 <p>從場景端裡顯示模組需要輸出 <code>建構式函式</code> 與 <code>area()</code> 方法，接下來看一下模組該如何輸出：</p>
 
+<p><code>square.js</code> 的內容</p>
+
 <pre class="prettyprint"><code class=" hljs lua"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(width)</span></span> {
   <span class="hljs-keyword">return</span> {
     area: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span> {
