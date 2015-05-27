@@ -1,3 +1,7 @@
+<script src="raphael-min.js"></script>
+<script src="underscore-min.js"></script>
+<script src="sequence-diagram-min.js"></script>
+
 <p><div class="toc">
 <ul>
 <li><a href="#javascipt-學習筆記">Javascipt 學習筆記</a><ul>
