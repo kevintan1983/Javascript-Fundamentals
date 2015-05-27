@@ -1,6 +1,6 @@
-<script src="raphael-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.4/raphael-min.js"></script>
 <script src="underscore-min.js"></script>
-<script src="sequence-diagram-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
 
 <p><div class="toc">
 <ul>
