@@ -270,9 +270,7 @@ person2.sayHello(); <span class="hljs-comment">// logs "Hello, I'm Bob"</span></
 
 <h1 id="nodejs-學習心得">Node.js 學習心得</h1>
 
-<p>Node.js 是一套以非同步、事件驅動設計為主的套件，同時也適合用來建置高擴展性的網站程式。我們從這個 “hello world” 的範例裡面瞭解， Node.js 可以同時處理許多 HTTP 連線，每當有新連線時，便會觸發 callback 事件處理每個 request ，當沒有連線時，Node.js 則是呈現休眠狀態。</p>
-
-
+<p>Node.js 是一套以非同步、事件驅動設計為主的套件，同時也適合用來建置高擴展性的網站程式。我們從這個 <em>hello world</em> 範例裡面瞭解， Node.js 可以同時處理許多 HTTP 連線，每當有新連線時，便會觸發 callback 事件處理每個 request ，當沒有連線時，Node.js 則是呈現休眠狀態。</p>
 
 <pre class="prettyprint"><code class=" hljs php"><span class="hljs-keyword">var</span> http = <span class="hljs-keyword">require</span>(<span class="hljs-string">'http'</span>);
 
